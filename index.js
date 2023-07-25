@@ -1,10 +1,10 @@
-import { JSDOM } from 'jsdom';
-import { basename } from 'node:path';
+const { JSDOM } = require('jsdom');
+const { basename } = require('node:path');
 
 /**
  * @return {import('vite').Plugin}
  */
-export default function() {
+exports.default = function() {
   return {
     name: 'asset-inline',
     enforce: 'post',
@@ -90,4 +90,4 @@ export default function() {
       console.table(report);
     },
   };
-}
+};
