@@ -4,7 +4,7 @@ const { basename } = require('node:path');
 /**
  * @return {import('vite').Plugin}
  */
-exports.default = function() {
+module.exports = function() {
   return {
     name: 'asset-inline',
     enforce: 'post',
