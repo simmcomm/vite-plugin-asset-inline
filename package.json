@@ -1,0 +1,15 @@
+{
+  "name": "vite-plugin-asset-inline",
+  "version": "1.0.0",
+  "description": "Asset inline plugin",
+  "main": "index.js",
+  "author": "Ivan Pepelko <ivan.pepelko@gmail.com>",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  },
+  "devDependencies": {
+    "vite": "^4.4.7"
+  }
+}
