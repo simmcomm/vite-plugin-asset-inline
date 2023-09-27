@@ -42,9 +42,13 @@ module.exports = function() {
           const urlProp = assetType === 'script' ? 'src' : 'href';
           const sourceProp = assetType === 'script' ? 'code' : 'source';
 
-          report.push({ fileName, assetType, url: domAsset[urlProp] });
+          const url = domAsset[urlProp];
+          // skip remote resources
+          if (url.startsWith('http')) return;
 
-          const outputBundleElement = bundle[domAsset[urlProp].slice(1)];
+          report.push({ fileName, assetType, url });
+
+          const outputBundleElement = bundle[url.slice(1)];
           let domAssetContents = outputBundleElement[sourceProp];
           if (assetType === 'style') {
             let charsetIndex = domAssetContents.indexOf('@charset');
